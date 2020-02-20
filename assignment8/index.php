@@ -16,15 +16,20 @@ $action = filter_input(INPUT_POST, 'action');
 
 switch ($action) {
     case 'process_data':
-        $name = ucfirst(filter_input(INPUT_POST, 'name'));
+        $name = ucfirst(filter_input(INPUT_POST, 'name'));  // capitalize the first letters only of the name
         $email = filter_input(INPUT_POST, 'email');
         $phone = filter_input(INPUT_POST, 'phone');
 
         // trim the spaces from the start and end of all data
-       
+        trim($name,"");
+        trim($email,"");
+        trim($phone,"");
         // validate that name is not empty
-       
-        // capitalize the first letters only of the name
+      
+        if ($name === filter_var("", FILTER_VALIDATE_BOOLEAN)||filter_var("0.0", FILTER_VALIDATE_BOOLEAN)||filter_var("0", FILTER_VALIDATE_BOOLEAN)||filter_var("NULL", FILTER_VALIDATE_BOOLEAN)||filter_var("FALSE", FILTER_VALIDATE_BOOLEAN)|| filter_var("array()", FILTER_VALIDATE_BOOLEAN)){
+            echo 'NOT VALID';
+        }
+    
 
        
         // get first name from complete name
