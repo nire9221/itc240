@@ -1,7 +1,8 @@
 
 <?php 
+
 function isPlaindrome ($name){
-    if ($name == "cat"){
+    if ($name[0] == $name[strlen($name) - 1]){
         echo "TRUE";
         return true;
         }else{
@@ -10,14 +11,19 @@ function isPlaindrome ($name){
         }
 }
 
-isPlaindrome ("cat");
+isPlaindrome ("cat"); 
+echo("<br>");
 isPlaindrome ("dog");
-isPlaindrome ("horse");
+echo("<br>");
+isPlaindrome ("radar");
+echo("<br>");
+isPlaindrome ("LOL");
+echo("<br>");
 
-//echo filter_var(isPlaindrome ("cat"), FILTER_VALIDATE_BOOLEAN);
 
 ?>
 
+<br>
 
 
 <?php 
